@@ -1,0 +1,400 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="modal fade" id="myModal" role="dialog" data-backdrop="static" data-keyboard="true">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="text-uppercase">會員註冊 (*必填選項)<span id="plzw8"></span></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <form action="~/User/Register" id="formUserRegister" method="post">
+                <div class="form-group">
+                    <label for="email">請輸入Email:*</label>
+                    <input type="text" class="form-control" name="Account" required placeholder="Email">
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">請輸入密碼:*</label>
+                    <input type="password" class="form-control" name="Password" required="required" placeholder="Password">
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="name">姓名:</label>
+                        <input type="text" class="form-control" name="Name" required placeholder="Name">
+                        <span></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="nickname">暱稱:*</label>
+                        <input type="text" class="form-control" name="Nickname" required placeholder="nickname">
+                        <span></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthDate">生日:*</label>
+                        <input type="date" class="form-control" name="birthDate" required="required" placeholder="birthDate">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="gender">性別:</label>
+                    <input type="radio" name="gender" value="male"> 男
+                    <input type="radio" name="gender" value="female"> 女
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">手機:*</label>
+                    <input type="text" class="form-control" name="Mobile" required="required" placeholder="phone">
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label for="address">地址:*</label>
+                    <input type="text" class="form-control" name="Address" required placeholder="address">
+                    <span></span>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-default" value="註冊" />
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="離開" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="Login" role="dialog" data-backdrop="static">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="text-uppercase">會員登入<span id="plzw8"></span></h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <form id="formUserRegister" action="~/User/Login" method="post">
+                <div class="form-group">
+                    <label for="email">請輸入Email:</label> <input class="form-control" name="Account" required placeholder="Email"
+                                                                type="text"> <span></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">請輸入密碼:</label> <input class="form-control" name="Password" required placeholder="Password"
+                                                                type="password"> <span></span>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-default" value="登入" />
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="離開" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="create1" role="dialog" data-backdrop="static" data-keyboard="true">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>建立活動</h4>
+            </div><hr />
+            <form id="createActivity" action="/Activity/create" method="post">
+                <div class="form-group">
+                    <label for="email">活動分類</label>
+                    <select name="category" class="select" style="width:200px;margin-right:40px">
+                        <option selected value="0">分類</option>
+                        <option value="1">外國語</option>
+                        <option value="2">運動</option>
+                    </select>
+                    <input type="text" class="form-control" name="Catrgory" required="required" />
+                </div>
+                <div class="form-group">
+                    <label for="password">活動名稱</label><hr />
+                    <input type="text" class="form-control" name="ActivityName" required="required" />
+                </div>
+                <div class="form-group">
+                    <label>活動地點</label>
+                    <input type="text" class="form-control" name="ActivityLocation" required="required" />
+                </div>
+                <div class="form-group">
+                    <label for="Time" style="font-size:20px;"><b><u>活動時間</u></b></label>
+                    <label>從</label>
+                    <input style="width:200px;margin-left:40px" type="date" class="form-control" name="ActivityName" required="required" placeholder="請選擇時間...">
+                </div>
+                <div class="form-group">
+                    <label for="Time" style="font-size:20px;"></label>
+                    <label>到</label>
+                    <input style="width:200px;margin-left:40px" type="date" class="form-control" name="ActivityName" required="required" placeholder="請選擇時間...">
+                </div>
+                <div class="form-group">
+                    <label>聯絡資訊</label>
+                    <input type="text" class="form-control" name="contact" required="required" />
+                </div>
+                <div class="form-group">
+                    <label for="comment">內容摘要</label>
+                    <textarea name="comment" class="form-control" rows="5" id="comment" style="width:400px;margin-left:40px"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" data-dismiss="modal">我要開團</button>
+                        <button type="reset" class="btn btn-primary" data-dismiss="modal"> 重設</button>
+                    </div>
+                </div>
+           </form>
+         </div>
+       </div>
+    </div>
+<header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style=" background-image:url('/img/1.jpg');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>鬥陣乎乾啦</h3>
+                    <p> 約咖就是這麼簡單</p>
+                </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('/img/4.JPG');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>JoFriend</h3>
+                    <p>找人聚會不孤單</p>
+                </div>
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('/img/3.JPG');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3></h3>
+                    <p>鬥陣乎乾啦</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</header>
+
+<!-- Page Content -->
+<div style="margin:45px">
+    <br>
+    <h1 style="font-size:60px;font-family:'Yu Gothic UI';text-align:center">活動分類</h1>
+    <hr>
+    <br>
+    <!-- Marketing Icons Section -->
+    <div class="row">
+        <div class="col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="#">
+                    <img style="height:290px;padding-top:15px" class="card-img-top" src="~/img/sport.gif" alt="">
+                </a><hr>
+                <div class="card-body">
+                    <h4 class="card-title"> <a href="#">肥宅運動會</a> </h4>
+                    <p class="card-text">一起來運動吧! go!go!go!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="#">
+                    <img style="height:290px;padding-top:15px" class="card-img-top" src="~/img/music.gif" alt="">
+                </a>
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title"> <a href="#">音樂</a> </h4>
+                    <p class="card-text">我想唱歌!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="#">
+                    <img style="height:290px;padding-top:15px" class="card-img-top" src="/img/world.jpg"
+                         alt="">
+                </a>
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title"> <a href="#">外國交流</a> </h4>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="#">
+                    <img style="height:290px;padding-top:15px" class="card-img-top" src="/img/game.jpg"
+                         alt="">
+                </a>
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title"> <a href="#">遊戲</a> </h4>
+                    <p class="card-text">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="#">
+                    <img style="height:290px;padding-top:15px" class="card-img-top" src="/img/cat.jpg"
+                         alt="">
+                </a>
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title"> <a href="#">寵物</a> </h4>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="#">
+                    <img style="height:290px;padding-top:15px" class="card-img-top" src="/img/alone.jpg"
+                         alt="">
+                </a>
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title"> <a href="#">邊緣人約吃飯</a> </h4>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="#">
+                    <img style="height:290px;padding-top:15px" class="card-img-top" src="/img/photography.jpg"
+                         alt="">
+                </a>
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title"> <a href="#">攝影</a> </h4>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="#">
+                    <img style="height:290px;padding-top:15px" class="card-img-top" src="/img/togther.jpg"
+                         alt="">
+                </a>
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title"> <a href="#">讓計程車失業</a> </h4>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="#">
+                    <img style="height:290px;padding-top:15px" class="card-img-top" src="/img/garbage.jpg" alt="">
+                </a>
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title"> <a href="#">文，青集散，地</a> </h4>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="#">
+                    <img style="height:290px;padding-top:15px" class="card-img-top" src="/img/fashion.jpg"
+                         alt="">
+                </a>
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title"> <a href="#">時尚</a> </h4>
+                    <p class="card-text"></P>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="#">
+                    <img style="height:290px;padding-top:15px" class="card-img-top" src="/img/travel.jpg"
+                         alt="">
+                </a>
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title"> <a href="#">旅遊</a> </h4>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="#">
+                    <img style="height:290px;padding-top:15px" class="card-img-top" src="/img/takecare.jpg"
+                         alt="">
+                </a>
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title"> <a href="#">長照</a> </h4>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="#">
+                    <img style="height:290px;width:400px;padding-left:20px;margin-left:auto" class="card-img-top" src="/img/coner.jpg"
+                         alt="">
+                </a>
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title"> <a href="#">官方活動</a> </h4>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+    <!-- Call to Action Section -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Molestias, expedita, saepe, vero rerum deleniti beatae veniam
+                harum neque nemo praesentium cum alias asperiores commodi.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-lg btn-secondary btn-block"
+               href="#">Call to Action</a>
+        </div>
+    </div>
+</div>

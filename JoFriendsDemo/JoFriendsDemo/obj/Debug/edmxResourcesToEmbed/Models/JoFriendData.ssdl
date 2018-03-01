@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JofriendModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="ActivityID" />
+    </Key>
+    <Property Name="ActivityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="FactoryID" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Content" Type="text" />
+    <Property Name="IsPublic" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Cost" Type="int" />
+    <Property Name="Points" Type="int" />
+    <Property Name="Tag" Type="text" />
+    <Property Name="Remarks" Type="text" />
+    <Property Name="Location" Type="nvarchar" MaxLength="300" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="300" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="300" />
+    <Property Name="AuditDate" Type="datetime" />
+    <Property Name="BeginAt" Type="datetime" />
+    <Property Name="EndAt" Type="datetime" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+    <Property Name="Total_person" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActivityDetail">
+    <Key>
+      <PropertyRef Name="ActivityDetailID" />
+    </Key>
+    <Property Name="ActivityDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="ActivityID" Type="int" />
+    <Property Name="Score" Type="int" />
+    <Property Name="Content" Type="text" />
+    <Property Name="RateTime" Type="datetime" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Blacklist">
+    <Key>
+      <PropertyRef Name="BlacklistID" />
+    </Key>
+    <Property Name="BlacklistID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="TargetID" Type="int" />
+    <Property Name="Reason" Type="text" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="Chat">
+    <Key>
+      <PropertyRef Name="ChatID" />
+    </Key>
+    <Property Name="ChatID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sender" Type="int" />
+    <Property Name="receiver" Type="int" />
+    <Property Name="message" Type="nvarchar(max)" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="platform" Type="int" />
+    <Property Name="mobileStatus" Type="int" />
+    <Property Name="webStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="Chatroom">
+    <Key>
+      <PropertyRef Name="ChatroomID" />
+    </Key>
+    <Property Name="ChatroomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="name" Type="varchar" MaxLength="300" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Exchange">
+    <Key>
+      <PropertyRef Name="ExchangeID" />
+    </Key>
+    <Property Name="ExchangeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="ProductID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Qty" Type="nvarchar" MaxLength="50" />
+    <Property Name="creatAt" Type="datetime" />
+    <Property Name="updateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Factory">
+    <Key>
+      <PropertyRef Name="FactoryID" />
+    </Key>
+    <Property Name="FactoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Follow">
+    <Key>
+      <PropertyRef Name="FollowID" />
+    </Key>
+    <Property Name="FollowID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="TargetID" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="GuestBook">
+    <Key>
+      <PropertyRef Name="GuestBookID" />
+    </Key>
+    <Property Name="GuestBookID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="20" />
+    <Property Name="Img" Type="nvarchar" MaxLength="50" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChatroomID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="name" Type="varchar" MaxLength="300" />
+    <Property Name="status" Type="varchar" MaxLength="300" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChatroomID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Message" Type="varchar" MaxLength="300" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MessageDetail">
+    <Key>
+      <PropertyRef Name="MessageDetailID" />
+    </Key>
+    <Property Name="MessageDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MessageID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Preference">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Scenery" Type="int" />
+    <Property Name="Notice" Type="nvarchar" MaxLength="300" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FactoryID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedTime" Type="datetime" />
+    <Property Name="ShelfTime" Type="datetime" />
+    <Property Name="Token" Type="int" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Record">
+    <Key>
+      <PropertyRef Name="ActivityDetailID" />
+    </Key>
+    <Property Name="ActivityDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RobotDictionary">
+    <Key>
+      <PropertyRef Name="RobotDictionaryID" />
+    </Key>
+    <Property Name="RobotDictionaryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="keyword" Type="varchar" MaxLength="300" />
+    <Property Name="Content" Type="text" />
+    <Property Name="ReplyText" Type="text" />
+    <Property Name="ReplyImg" Type="varchar" MaxLength="300" />
+    <Property Name="ReplyLink" Type="varchar" MaxLength="300" />
+    <Property Name="ReplyTime" Type="datetime" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RobotRecord">
+    <Key>
+      <PropertyRef Name="RobotRecordID" />
+    </Key>
+    <Property Name="RobotRecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Content" Type="text" />
+    <Property Name="ReplyTime" Type="datetime" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Suggest">
+    <Key>
+      <PropertyRef Name="SuggestID" />
+    </Key>
+    <Property Name="SuggestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userID" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Content" Type="text" />
+    <Property Name="Score" Type="int" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="300" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="nickname" Type="nvarchar" MaxLength="50" />
+    <Property Name="birthDate" Type="datetime" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="createAt" Type="datetime" />
+    <Property Name="updateAt" Type="datetime" />
+    <Property Name="imgUrl" Type="nvarchar(max)" />
+    <Property Name="intro" Type="text" />
+    <Property Name="gender" Type="int" />
+  </EntityType>
+  <EntityContainer Name="JofriendModelStoreContainer">
+    <EntitySet Name="Activity" EntityType="Self.Activity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ActivityDetail" EntityType="Self.ActivityDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Blacklist" EntityType="Self.Blacklist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chat" EntityType="Self.Chat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chatroom" EntityType="Self.Chatroom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Exchange" EntityType="Self.Exchange" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Factory" EntityType="Self.Factory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Follow" EntityType="Self.Follow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GuestBook" EntityType="Self.GuestBook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MessageDetail" EntityType="Self.MessageDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Preference" EntityType="Self.Preference" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Record" EntityType="Self.Record" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RobotDictionary" EntityType="Self.RobotDictionary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RobotRecord" EntityType="Self.RobotRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Suggest" EntityType="Self.Suggest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

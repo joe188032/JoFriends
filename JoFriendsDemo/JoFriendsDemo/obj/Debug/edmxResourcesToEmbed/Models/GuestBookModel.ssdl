@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JofriendModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GuestBook">
+    <Key>
+      <PropertyRef Name="GuestBookID" />
+    </Key>
+    <Property Name="GuestBookID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="20" />
+    <Property Name="Img" Type="nvarchar" MaxLength="50" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="Time" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="JofriendModel1StoreContainer">
+    <EntitySet Name="GuestBook" EntityType="Self.GuestBook" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

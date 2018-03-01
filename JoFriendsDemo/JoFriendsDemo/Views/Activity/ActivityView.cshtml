@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "ActivityView";
+    
+}
+<div style="margin:45px">
+    <div class="row">
+        <div class="col-lg-9 mb-6">
+            <!-- Embedded Google Map -->
+            <iframe style=" width:100%; height:400px; " src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+        </div>
+        <div class="col-lg-3 mb-1">
+            <from>
+                <h4 class="text-uppercase">留言</h4>
+                <div class="row comment">
+                    <div style="margin-left:5px" class="col-sm-9 col-md-10">
+                        <h5 class="text-uppercase"><img src="img/5.jpg" style="width:60px;height:60px">&nbsp<u>洽吉</u></h5>
+                        <p class="posted"><i class="fa fa-clock-o"></i> September 23, 2011 at 12:00 am</p>
+                        <p>
+                            雖然我還沒去過，但我覺得一定超好玩搭瞄
+                        </p>
+                        <p class="reply">
+                            <a href="#"><i class="fa fa-reply"></i> Reply</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <label>我要留言:</label>
+                        <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="height:150px"></textarea>
+                    </div>
+                </div>
+                <div style="padding-left:340px" id="success"><button type="submit" id="sendMessageButton">送出留言</button></div>
+                <!-- For success/fail messages -->
+            </from>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-9 mb-5">
+            <h3><u>近期活動列表</u></h3>
+            <hr>
+            <br>
+            <form>
+             
+               <div>
+                   <h></h>
+               </div>
+
+            </form>
+          
+        </div>
+    </div>
+ </div>
+
+
+

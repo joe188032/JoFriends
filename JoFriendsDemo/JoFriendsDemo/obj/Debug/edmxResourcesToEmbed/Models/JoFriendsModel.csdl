@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JofriendModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="ActivityID" />
+    </Key>
+    <Property Name="ActivityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="FactoryID" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsPublic" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Points" Type="Int32" />
+    <Property Name="Tag" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Longitude" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="AuditDate" Type="DateTime" Precision="3" />
+    <Property Name="BeginAt" Type="DateTime" Precision="3" />
+    <Property Name="EndAt" Type="DateTime" Precision="3" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ActivityDetail">
+    <Key>
+      <PropertyRef Name="ActivityDetailID" />
+    </Key>
+    <Property Name="ActivityDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="ActivityID" Type="Int32" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Blacklist">
+    <Key>
+      <PropertyRef Name="BlacklistID" />
+    </Key>
+    <Property Name="BlacklistID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="TargetID" Type="Int32" />
+    <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Chatroom">
+    <Key>
+      <PropertyRef Name="ChatroomID" />
+    </Key>
+    <Property Name="ChatroomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Exchange">
+    <Key>
+      <PropertyRef Name="ExchangeID" />
+    </Key>
+    <Property Name="ExchangeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="ProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="creatAt" Type="DateTime" Precision="3" />
+    <Property Name="updateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Factory">
+    <Key>
+      <PropertyRef Name="FactoryID" />
+    </Key>
+    <Property Name="FactoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Follow">
+    <Key>
+      <PropertyRef Name="FollowID" />
+    </Key>
+    <Property Name="FollowID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="TargetID" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChatroomID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChatroomID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Message1" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MessageDetail">
+    <Key>
+      <PropertyRef Name="MessageDetailID" />
+    </Key>
+    <Property Name="MessageDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MessageID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Preference">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Scenery" Type="Int32" />
+    <Property Name="Notice" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FactoryID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedTime" Type="DateTime" Precision="3" />
+    <Property Name="ShelfTime" Type="DateTime" Precision="3" />
+    <Property Name="Token" Type="Int32" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Record">
+    <Key>
+      <PropertyRef Name="ActivityDetailID" />
+    </Key>
+    <Property Name="ActivityDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RobotDictionary">
+    <Key>
+      <PropertyRef Name="RobotDictionaryID" />
+    </Key>
+    <Property Name="RobotDictionaryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="keyword" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ReplyText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ReplyImg" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="ReplyLink" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="ReplyTime" Type="DateTime" Precision="3" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RobotRecord">
+    <Key>
+      <PropertyRef Name="RobotRecordID" />
+    </Key>
+    <Property Name="RobotRecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ReplyTime" Type="DateTime" Precision="3" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Suggest">
+    <Key>
+      <PropertyRef Name="SuggestID" />
+    </Key>
+    <Property Name="SuggestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="CreateAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nickname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="birthDate" Type="DateTime" Precision="3" />
+    <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createAt" Type="DateTime" Precision="3" />
+    <Property Name="updateAt" Type="DateTime" Precision="3" />
+    <Property Name="imgUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="intro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="JofriendEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Activity" EntityType="Self.Activity" />
+    <EntitySet Name="ActivityDetail" EntityType="Self.ActivityDetail" />
+    <EntitySet Name="Blacklist" EntityType="Self.Blacklist" />
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="Chatroom" EntityType="Self.Chatroom" />
+    <EntitySet Name="Exchange" EntityType="Self.Exchange" />
+    <EntitySet Name="Factory" EntityType="Self.Factory" />
+    <EntitySet Name="Follow" EntityType="Self.Follow" />
+    <EntitySet Name="Member" EntityType="Self.Member" />
+    <EntitySet Name="Message" EntityType="Self.Message" />
+    <EntitySet Name="MessageDetail" EntityType="Self.MessageDetail" />
+    <EntitySet Name="Preference" EntityType="Self.Preference" />
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="Record" EntityType="Self.Record" />
+    <EntitySet Name="RobotDictionary" EntityType="Self.RobotDictionary" />
+    <EntitySet Name="RobotRecord" EntityType="Self.RobotRecord" />
+    <EntitySet Name="Suggest" EntityType="Self.Suggest" />
+    <EntitySet Name="users" EntityType="Self.users" />
+  </EntityContainer>
+</Schema>

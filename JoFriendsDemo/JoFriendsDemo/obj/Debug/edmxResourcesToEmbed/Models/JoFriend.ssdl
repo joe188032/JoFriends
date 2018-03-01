@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JofriendModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'Jofriend.dbo.GuestBook' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="GuestBook">
+    <Key>
+      <PropertyRef Name="GuestBookID" />
+    </Key>
+    <Property Name="GuestBookID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="20" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="Time" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="JofriendModel1StoreContainer">
+    <EntitySet Name="GuestBook" EntityType="Self.GuestBook" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [GuestBook].[GuestBookID] AS [GuestBookID], 
+    [GuestBook].[CategoryID] AS [CategoryID], 
+    [GuestBook].[UserID] AS [UserID], 
+    [GuestBook].[NickName] AS [NickName], 
+    [GuestBook].[Title] AS [Title], 
+    [GuestBook].[Comment] AS [Comment], 
+    [GuestBook].[Time] AS [Time]
+    FROM [dbo].[GuestBook] AS [GuestBook]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

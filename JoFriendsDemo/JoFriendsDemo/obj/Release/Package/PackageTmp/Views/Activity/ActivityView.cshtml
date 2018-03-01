@@ -1,0 +1,188 @@
+﻿
+@{
+    ViewBag.Title = "ActivityView";
+}
+
+<h2></h2>
+
+  <!-- Navigation -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="img/logo.png" style="width:200px;height:100px"></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li style="margin-top:5px;margin-right:220px">
+                    <select name="production" size="1" class="select" style="height:30px">
+                        <option value="1">活動標題</option>
+                        <option value="2">活動地點</option>
+                        <option value="3">活動時間</option>
+                    </select>
+                    <input name="username1"
+                           placeholder="請輸入搜尋搜尋內容..."
+                           style="width:200px;" type="text" class="select">
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal">搜尋</button>
+                </li>
+                <li style="margin-top:5px">
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#create">創立活動</button>
+                </li>
+                <li><h1>&nbsp</h1></li>
+                <li style="margin-top:5px">
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#Login">登入</button>
+                </li>
+                <li><h1>&nbsp</h1></li>
+                <li style="margin-top:5px">
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">註冊</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                <br>
+            </li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                <br>
+            </li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2">
+                <br>
+            </li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+
+        </div>
+        <!-- Page Content -->
+        <div class="container">
+            <!-- Page Heading/Breadcrumbs -->
+            <h1 class="mt-4 mb-3">
+                Contact
+                <small>Subheading</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">回首頁</a>
+                </li>
+                <li class="breadcrumb-item active">活動</li>
+            </ol>
+            <!-- Content Row -->
+            <div class="row">
+                <!-- Map Column -->
+                <div class="col-lg-8 mb-4">
+                    <!-- Embedded Google Map -->
+                    <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+                </div>
+                <!-- Contact Details Column -->
+
+
+                <div class="col-lg-4 mb-4">
+
+                    <div class="container">
+                        <h3>近期活動列表</h3>
+                        <form>
+                            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">20180130-資策會之讀書會</button>
+                            <div id="demo" class="collapse">
+                                時間地點
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="container">
+
+                        <form>
+                            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo2">20180130-資策會之讀書會</button>
+                            <div id="demo2" class="collapse">
+                                時間地點222222222
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- /.row -->
+            <!-- Contact Form -->
+            <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+            <!-- /#post-content -->
+
+
+            <from>
+                <div id="comments">
+                    <h4 class="text-uppercase">留言</h4>
+
+
+                    <div class="row comment">
+                        <div class="col-sm-3 col-md-2 text-center-xs">
+
+                            <p>
+                                <img src="img/5.jpg" class="img-responsive img-circle" alt="">
+                            </p>
+                        </div>
+                        <div class="col-sm-9 col-md-10">
+                            <h5 class="text-uppercase">洽吉</h5>
+                            <p class="posted"><i class="fa fa-clock-o"></i> September 23, 2011 at 12:00 am</p>
+                            <p>
+                                雖然我還沒去過，但我覺得一定超好玩搭瞄
+                            </p>
+                            <p class="reply">
+                                <a href="#"><i class="fa fa-reply"></i> Reply</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row comment">
+                        <div class="col-sm-3 col-md-2 text-center-xs">
+                            <p>
+                                <img src="img/5.jpg" class="img-responsive img-circle" alt="">
+                            </p>
+                        </div>
+                        <div class="col-sm-9 col-md-10">
+                            <h5 class="text-uppercase">臭臉貓</h5>
+                            <p class="posted"><i class="fa fa-clock-o"></i> September 23, 2011 at 12:00 am</p>
+                            <p>
+                                本瞄已經去過五次了，只能說超好玩搭喵
+                            </p>
+                            <p class="reply">
+                                <a href="#"><i class="fa fa-reply"></i> Reply</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>我要留言:</label>
+                            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                        </div>
+                    </div>
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    <button type="submit" class="btn btn-primary" id="sendMessageButton">送出留言</button>
+
+                </div>
+        </div>
+        </from>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Contact form JavaScript -->
+    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+    </body>
+
+    </html>

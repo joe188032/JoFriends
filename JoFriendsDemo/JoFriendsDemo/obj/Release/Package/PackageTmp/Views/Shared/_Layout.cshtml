@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>JoFriends</title>
+    @Styles.Render("~/Content/bootstrap.min.css")
+    @Styles.Render("~/Content/modern-business.css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .select {
+            border: 1px solid #c9c9c9;
+            background-color: #fff;
+            color: #666;
+            height: 28px;
+            line-height: 28px;
+            padding: 4px 6px;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html"><img src="/img/logo.png" style="width:200px;height:100px"></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <form class="form-inline ml-auto">
+            <select name="production" size="1" class="select" style="height:50px;margin-right:10px;width:100px">
+                <option value="1">標題</option>
+                <option value="2">地點</option>
+                <option value="3">時間</option>
+            </select>
+            <input class="form-control mr-sm-2" type="text" placeholder="找活動"  style="width:400px;height:50px"/>
+            <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search" style="width:100px;height:50px">
+        </form>
+        <ul class="navbar-nav ml-auto">
+            @{if (Session["NickName"] == null)
+                {
+                    <li><h1>&nbsp</h1></li>
+                    <li style="margin-top:5px">
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#Login">登入</button>
+                    </li>
+                    <li><h1>&nbsp</h1></li>
+                    <li style="margin-top:5px">
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">註冊</button>
+                    </li>
+                }
+                else
+                {
+                    <li style="margin-top:5px;color:azure;font-size:30px">
+                        <u>哈囉!  @Session["NickName"].ToString()</u>
+                    </li>
+                    <li><h1>&nbsp</h1></li>
+                    <li><h1>&nbsp</h1></li>
+                    <li style="margin-top:5px">
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#create1">我要揪團</button>
+                    </li>
+                    <li><h1>&nbsp</h1></li>
+                   
+                    <li><h1>&nbsp</h1></li>
+                    <li style="margin-top:5px">
+                        <form action="/User/Logout" method="post">
+                        <input id="logout" type="submit" class="btn btn-info btn-lg" value="登出"  >
+                        </form>                    
+                     </li>
+                }
+            }
+        </ul>
+    </nav>
+    <div>
+    @RenderBody()
+    </div>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/bootstrap.bundle.min.js")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+      
+    </script>
+</body>
+</html>

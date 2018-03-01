@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "ReadMore";
+    JoFriendsDemo.Models.Activity d = ViewData["ActivityDetail"] as JoFriendsDemo.Models.Activity;
+    JoFriendsDemo.Models.users user = Session["User"] as JoFriendsDemo.Models.users;
+}
+<div class="container">
+    <!---<div class="row" style="margin:70px">
+        <iframe style=" width:120%; height:550px; " src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+    </div>-->
+    <div id="map" style="width:100%; height:600px;margin-top:80px"></div>
+    <hr />
+</div>
+@{
+    <div class="container">
+        <table id="table" class="table">
+            <tbody>
+                <tr class="table-success">
+                    <td>活動名稱</td>
+                    <td>@d.Title</td>
+                </tr>
+                <tr class="table-success">
+                    <td>活動時間</td>
+                    <td>@d.BeginAt - @d.EndAt</td>
+                </tr>
+                <tr class="table-success">
+                    <td>活動地點</td>
+                    <td id="addr">@d.Address</td>
+                </tr>
+                <tr class="table-success">
+                    <td>參加人數</td>
+                    <td>@d.Total_person</td>
+                </tr>
+                <tr class="table-success">
+                    <td>費用</td>
+                    <td>@d.Cost</td>
+                </tr>
+                <tr class="table-success">
+                    <td>活動內容</td>
+                    <td>@d.Content</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+<div class="text-center" style="margin-bottom:20px">
+    <a id="Join" class="btn btn-danger" style="text-align:center" href="~/Activity/Join/?cid=@d.ActivityID">我要參加</a>
+</div>
+
+
+<script type="text/javascript">
+
+    function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 18,
+            center: { lat: -34.397, lng: 150.644 }
+        });
+        var geocoder = new google.maps.Geocoder();
+        geocodeAddress(geocoder, map);
+
+    }
+    function geocodeAddress(geocoder, resultsMap) {
+        var address = "@d.Address.ToString()";
+        geocoder.geocode({ 'address': address }, function (results, status) {
+
+            if (status === 'OK') {
+                resultsMap.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: resultsMap,
+                    position: results[0].geometry.location
+                });
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+</script>
+@if (user != null)
+{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+                $('#SendComment').click(function () {
+
+                    alert("aaaa");
+
+                    if (@user==null) {
+
+                        alert("您尚未登入，請您先登入才可以開始留言喔!");
+                    }
+                    else {
+                        var data = { Cid: @d.CategoryID, Uid: @user.userID,NickName: @user.nickname, Comment: "$('#Comment').val()" }
+                        $.ajax({
+                            type: "post",
+                            url: "/Activity/PostComment",
+                            data: JSON.stringify(data),
+                            success: function () {
+
+                                $("#GuestBook").append("<p>aaaa</p>");
+
+                            }
+                        })
+                    }
+                });
+            }
+    </script>
+}
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeuG8LgDzaFu8iMB-NKRXcylFH5xzkeZ8&callback=initMap"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+
+
+

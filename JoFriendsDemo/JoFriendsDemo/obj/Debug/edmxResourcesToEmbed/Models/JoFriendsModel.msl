@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JofriendModelStoreContainer" CdmEntityContainer="JofriendEntities">
+    <EntitySetMapping Name="Activity">
+      <EntityTypeMapping TypeName="JofriendModel.Activity">
+        <MappingFragment StoreEntitySet="Activity">
+          <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FactoryID" ColumnName="FactoryID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="AuditDate" ColumnName="AuditDate" />
+          <ScalarProperty Name="BeginAt" ColumnName="BeginAt" />
+          <ScalarProperty Name="EndAt" ColumnName="EndAt" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityDetail">
+      <EntityTypeMapping TypeName="JofriendModel.ActivityDetail">
+        <MappingFragment StoreEntitySet="ActivityDetail">
+          <ScalarProperty Name="ActivityDetailID" ColumnName="ActivityDetailID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="RateTime" ColumnName="RateTime" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blacklist">
+      <EntityTypeMapping TypeName="JofriendModel.Blacklist">
+        <MappingFragment StoreEntitySet="Blacklist">
+          <ScalarProperty Name="BlacklistID" ColumnName="BlacklistID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TargetID" ColumnName="TargetID" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="JofriendModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chatroom">
+      <EntityTypeMapping TypeName="JofriendModel.Chatroom">
+        <MappingFragment StoreEntitySet="Chatroom">
+          <ScalarProperty Name="ChatroomID" ColumnName="ChatroomID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exchange">
+      <EntityTypeMapping TypeName="JofriendModel.Exchange">
+        <MappingFragment StoreEntitySet="Exchange">
+          <ScalarProperty Name="ExchangeID" ColumnName="ExchangeID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="creatAt" ColumnName="creatAt" />
+          <ScalarProperty Name="updateAt" ColumnName="updateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Factory">
+      <EntityTypeMapping TypeName="JofriendModel.Factory">
+        <MappingFragment StoreEntitySet="Factory">
+          <ScalarProperty Name="FactoryID" ColumnName="FactoryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Follow">
+      <EntityTypeMapping TypeName="JofriendModel.Follow">
+        <MappingFragment StoreEntitySet="Follow">
+          <ScalarProperty Name="FollowID" ColumnName="FollowID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TargetID" ColumnName="TargetID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Member">
+      <EntityTypeMapping TypeName="JofriendModel.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="ChatroomID" ColumnName="ChatroomID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Message">
+      <EntityTypeMapping TypeName="JofriendModel.Message">
+        <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="ChatroomID" ColumnName="ChatroomID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Message1" ColumnName="Message" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageDetail">
+      <EntityTypeMapping TypeName="JofriendModel.MessageDetail">
+        <MappingFragment StoreEntitySet="MessageDetail">
+          <ScalarProperty Name="MessageDetailID" ColumnName="MessageDetailID" />
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Preference">
+      <EntityTypeMapping TypeName="JofriendModel.Preference">
+        <MappingFragment StoreEntitySet="Preference">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Scenery" ColumnName="Scenery" />
+          <ScalarProperty Name="Notice" ColumnName="Notice" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="JofriendModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="FactoryID" ColumnName="FactoryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AddedTime" ColumnName="AddedTime" />
+          <ScalarProperty Name="ShelfTime" ColumnName="ShelfTime" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Record">
+      <EntityTypeMapping TypeName="JofriendModel.Record">
+        <MappingFragment StoreEntitySet="Record">
+          <ScalarProperty Name="ActivityDetailID" ColumnName="ActivityDetailID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RobotDictionary">
+      <EntityTypeMapping TypeName="JofriendModel.RobotDictionary">
+        <MappingFragment StoreEntitySet="RobotDictionary">
+          <ScalarProperty Name="RobotDictionaryID" ColumnName="RobotDictionaryID" />
+          <ScalarProperty Name="keyword" ColumnName="keyword" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ReplyText" ColumnName="ReplyText" />
+          <ScalarProperty Name="ReplyImg" ColumnName="ReplyImg" />
+          <ScalarProperty Name="ReplyLink" ColumnName="ReplyLink" />
+          <ScalarProperty Name="ReplyTime" ColumnName="ReplyTime" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RobotRecord">
+      <EntityTypeMapping TypeName="JofriendModel.RobotRecord">
+        <MappingFragment StoreEntitySet="RobotRecord">
+          <ScalarProperty Name="RobotRecordID" ColumnName="RobotRecordID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ReplyTime" ColumnName="ReplyTime" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suggest">
+      <EntityTypeMapping TypeName="JofriendModel.Suggest">
+        <MappingFragment StoreEntitySet="Suggest">
+          <ScalarProperty Name="SuggestID" ColumnName="SuggestID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="JofriendModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="createAt" ColumnName="createAt" />
+          <ScalarProperty Name="updateAt" ColumnName="updateAt" />
+          <ScalarProperty Name="imgUrl" ColumnName="imgUrl" />
+          <ScalarProperty Name="intro" ColumnName="intro" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
